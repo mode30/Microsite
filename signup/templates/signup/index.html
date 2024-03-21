@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% load static %}
+{% block css_files %}
+    <link rel="stylesheet" href="{% static "styles.css" %}">
+{% endblock css_files %}
+{% block content %}
+ <form action="">
+{% csrf_token %}
+    {{ form }}
+    <button>Submit</button>
+ </form> 
+{% endblock content %}

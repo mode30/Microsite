@@ -1,14 +1,12 @@
 {% extends "base.html" %}
-
+{% load static %}
+{% block css_files %}
+  <link rel="stylesheet" href="{% static "signup/names.css" %}">
+{% endblock css_files %}
 {% block content %}
-
-    {% for name in name  %}
-    <!-- <ul> -->
-        <!-- <li> -->
-           {{ name }} 
-     <!-- {{ name.full_name }}  -->
-        <!-- </li> -->
-
-    {% endfor %}
-    <!-- </ul> -->
-{% endblock content %}
+    <ul class="name-list">
+        {% for name in name %}
+            <li>{{ name }}</li>
+        {% endfor %}
+    </ul>
+{% endblock %}

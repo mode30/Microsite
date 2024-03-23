@@ -4,22 +4,32 @@
     <link rel="stylesheet" href="{% static "signup/signup.css" %}">
 {% endblock css_files %}
 {% block content %}
+<div>
 
+
+</div>
 
 
  <form action="" method="POST">
    
 {% csrf_token %}
-  {{ form.full_name.label_tag }} 
-  {{ form.full_name }}
-  {{ form.full_name.errors }}
-  {{ form.email.label_tag }}
-  {{ form.email }}
-  {{ form.email.errors }}
+
+  <div class="container">
+    <div class="field">
+        
+          {{ form.full_name.label_tag }}
+          {{ form.full_name }}
+          {{ form.full_name.errors }}
+    </div>
+
+      <div class="field">
+          {{ form.email.label_tag }}
+          {{ form.email }}
+          {{ form.email.errors }}
+      </div>
+  </div>
     <button >Submit</button>
  </form> 
 {% endblock content %}
 
 
-    </div >
-   

@@ -7,7 +7,11 @@ def index(request):
     if request.method=="POST":
         form=CustomerForm(request.POST)
         if form.is_valid():
-            form.save()
+            full_name=form.cleaned_data['full_name']
+            email=form.cleaned_data['email']
+            customer=Customer(full_name=full_name,email=email)
+            customer.save()
+
             return  HttpResponse('index')
         else:
             form=CustomerForm()

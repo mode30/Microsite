@@ -1,12 +1,25 @@
 {% extends "base.html" %}
 {% load static %}
 {% block css_files %}
-    <link rel="stylesheet" href="{% static "styles.css" %}">
+    <link rel="stylesheet" href="{% static "signup/signup.css" %}">
 {% endblock css_files %}
 {% block content %}
- <form action="">
+
+
+
+ <form action="" method="POST">
+   
 {% csrf_token %}
-    {{ form }}
-    <button>Submit</button>
+  {{ form.full_name.label_tag }} 
+  {{ form.full_name }}
+  {{ form.full_name.errors }}
+  {{ form.email.label_tag }}
+  {{ form.email }}
+  {{ form.email.errors }}
+    <button >Submit</button>
  </form> 
 {% endblock content %}
+
+
+    </div >
+   
